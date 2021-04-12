@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bottom_sheet_back"
+    android:paddingBottom="15dp">
+
+    <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_top"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    app:layout_constraintGuide_begin="25dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="25dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="25dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="-2dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/edit_button"
+        style="@style/ButtonStyle"
+        android:background="@drawable/ripple"
+        android:text="@string/edit_button"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dotted_border"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_button"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top" />
+
+
+    <!--<androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/edit_button">-->
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_material_progress_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/progress_placeholder"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:theme="@style/SwitchStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/edit_button" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_material_rewind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/exo_controls_rewind_description"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:theme="@style/SwitchStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/switch_material_progress_placeholder" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_material_fastforward"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/exo_controls_fastforward_description"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:theme="@style/SwitchStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/switch_material_rewind" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_material_subtitles"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/exo_subtitle"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:theme="@style/SwitchStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/switch_material_fastforward" />
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switch_material_forward"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:text="@string/exo_controls_forward"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18dp"
+        android:theme="@style/SwitchStyle"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/switch_material_subtitles" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_settings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:theme="@style/ButtonStyle"
+        android:background="@drawable/ripple"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
+        app:layout_constraintTop_toBottomOf="@+id/switch_material_forward" />
+
+    <!--<View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@color/color_gray" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/image_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/circle_back"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="@+id/chip1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintTop_toTopOf="@+id/chip1" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+
+    <!--<androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
